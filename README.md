@@ -1,7 +1,12 @@
 CourseMap
 ======
 
-Contribution
+[![Stories in Ready](https://badge.waffle.io/louy2/coursemap.svg?label=ready&title=Ready)](http://waffle.io/louy2/coursemap)
+
+CourseMap is a new way to explore the course catalog of [RPI](http://www.rpi.edu/).
+
+CourseMap is an [RCOS](http://rcos.rpi.edu/) project.
+
 Setting Up Dev Environment
 ------
 
