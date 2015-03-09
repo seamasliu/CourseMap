@@ -35,7 +35,7 @@ sigma.classes.graph.attach('addNode', 'refreshCoordinates', function(){
 
 var s = new sigma('container');
 
-oboe('../data/csci_spring_2015.json')
+oboe('./data/csci_spring_2015.json')
   .node({
 		// Process each course as it arrives
 		'result[*]': function(course){
