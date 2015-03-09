@@ -1,37 +1,58 @@
-var s = new sigma('container');
-
 // Radius of layers according to course level
-var radius = new Array;
-radius[0] = 30;
-radius[1] = 40;
-radius[2] = 50;
-radius[3] = 60;
-radius[4] = 70;
-radius[5] = 80;
-radius[6] = 90;
-radius[7] = 100;
-radius[8] = 110;
-radius[9] = 120;
+var radius = new Array,
+		ln,
+		li = [];
+
+for (var i = 0; i < 10; i++) {
+	radius[i] = 15 + 10 * i;
+	li[i] = 0;
+}
+
+sigma.classes.graph.addIndex('layerCount',{
+	constructor: function(){ this.layerCount = []; },
+	addNode: function(n){
+		if (!this.layerCount[n.layer])
+			this.layerCount[n.layer] = 0;
+		this.layerCount[n.layer]++;
+		console.log(this.layerCount);
+	},
+	dropNode: function(nid){
+		this.layerCount[this.nodeIndex[nid].layer]--;
+	}
+});
+
+sigma.classes.graph.attach('addNode', 'refreshCoordinates', function(){
+	var _self = this;
+	_self.nodesArray.forEach(function(n,i,a){
+		n.x = radius[n.layer] * Math.sin(
+			n.layerIndex*2*Math.PI/_self.layerCount[n.layer]
+		);
+		n.y = radius[n.layer] * Math.cos(
+			n.layerIndex*2*Math.PI/_self.layerCount[n.layer]
+		);
+	});
+});
+
+var s = new sigma('container');
 
 oboe('/data/csci_spring_2015.json')
   .node({
 		// Process each course as it arrives
 		'result[*]': function(course){
-			var layer = Math.floor(course.number / 1000) - 1;
-			console.log('CSCI-' + course.number + ' ' + layer);
+			ln = Math.floor(course.number / 1000) - 1;
+			console.log('CSCI-' + course.number + ' ' + ln);
 			// Add the current node
 			s.graph.addNode({
 				id: 'n'+course.id,
 				x: Math.random(),
 				y: Math.random(),
-				size: Math.random(),
+				size: 2,
 				color: '#666',
-				label: 'CSCI-'+course.number
+				label: 'CSCI-'+course.number,
+				layer: ln,
+				layerIndex: li[ln]++
 			});
 			// Refresh the graph
 			s.refresh();
 		}
-	})
-	.done(function(courses){
-		console.log(courses);
 	});
