@@ -13,14 +13,19 @@ Setting Up Dev Environment
 ###Set Up Locally
 
 1. Install [Github For Windows](https://windows.github.com/)
-2. Install [Node.js](http://nodejs.org/).
-3. Open up "Git Shell" which comes with Github For Windows.
-4. Install duo.js by `npm install -g duo`.
+2. Open `index.html` with Chrome or Firefox and enable the dev tools in it.
+3. `js/index.js` is the main javascript file to edit.
+4. [Follow the workflow.](https://guides.github.com/introduction/flow/index.html)
 
 ###Vagrant VM
 
-**This is not ready yet. Please use the above method.**
+**This is not ready yet. **
 
 1. [Fork the repository.](https://help.github.com/articles/fork-a-repo/)
 2. `vagrant up` the dev VM.
-2. [Follow the workflow.](https://guides.github.com/introduction/flow/index.html)
+3. [Follow the workflow.](https://guides.github.com/introduction/flow/index.html)
+
+Thanks To (And Reference To)
+------
+- [OBOE.js](http://oboejs.com/)
+- [Sigma.js](https://github.com/jacomyal/sigma.js)
