@@ -41,7 +41,7 @@ sigma.classes.graph.addMethod('refreshCoordinates', function(){
 });
 
 
-oboe('./data/csci_spring_2015.json')
+oboe('http://yacs.me/api/4/courses/?semester_id=85363')
   .node({
 		// Process each course as it arrives
 		'result[*]': function(course){
