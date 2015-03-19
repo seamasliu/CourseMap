@@ -78,4 +78,7 @@ oboe('./data/csci_spring_2015.json')
 			s.graph.refreshCoordinates();
 			s.refresh();
 		}
+	})
+	.done(function(jdata){
+		console.log(jdata.result.length);
 	});
