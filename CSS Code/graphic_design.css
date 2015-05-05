@@ -1,0 +1,53 @@
+#header {
+	padding: 0.2em;
+	background-color: rgb(204,166,168);
+	font-family: "Times New Roman", Times, serif;
+	font-weight: bold;
+	font-size: 3em;
+	color: white;
+	text-align: center;
+}
+
+#body {
+	overflow: auto;
+}
+
+#sidebar {
+	float: left;
+	width: 23em;
+	min-height: 44em;
+	background-color: rgb(254,233,255)
+}
+
+#filter_button {
+	margin: 4em 2em 2em 2em;
+	height: 1.8em;
+	width: 10em;
+	padding: 0.3em;
+	background-color: white;
+	border: 1.5px solid rgb(204,203,166);
+}
+
+#search_box {
+	margin: 2em 2em 4em 2em;
+	height: 1.8em;
+	width: 18em;
+	padding: 0.3em;
+	background-color: white;
+	border: 1.5px solid rgb(204,203,166);
+}
+
+p.box {
+    margin: 0em;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 1.5em;
+	color: rgb(153,78,83);
+	text-align: left;
+}
+
+#logo {
+	position: absolute;
+	right: 2em;
+	bottom: 2em;
+	width: 15em;
+}
